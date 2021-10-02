@@ -1,0 +1,148 @@
+@font-face {
+  font-family: primary;
+  src: url(./fonts/Montserrat/Montserrat-Medium.ttf);
+}
+@font-face {
+  font-family: secondary;
+  src: url(./fonts/Tajawal/Tajawal-Light.ttf);
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(120deg, #f8d45d, #fc7049);
+  color: #fff;
+  font-family: secondary;
+  min-height: 100vh;
+}
+h1 {
+  font-family: primary;
+}
+header {
+  font-size: 1.5rem;
+}
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form input,
+form button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: #fff;
+}
+
+form button {
+  color: #fc7049;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  color: #fff;
+  background: #fc7049;
+}
+
+.todo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-list {
+  list-style: none;
+  min-width: 30%;
+}
+
+.todo {
+  margin: 0.5rem;
+  background: #fff;
+  color: black;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+/* To push the buttons to on side */
+.todo li {
+  flex: 1;
+}
+
+.trash-btn,
+.complete-btn {
+  background: #e84118;
+  color: #fff;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border: none;
+}
+.trash-btn i,
+.complete-btn i {
+  /* this will make the icons unclickable */
+  pointer-events: none;
+}
+.complete-btn {
+  background: #4cd137;
+}
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+
+.complete {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.fall {
+  transform: translateX(8rem) rotate(30deg);
+  opacity: 0;
+}
+
+/* styliing the select buton */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+select {
+  color: #fc7049;
+  width: 10rem;
+  cursor: pointer;
+  padding: 1rem;
+}
+.select::after {
+  content: "\25bc";
+  position: absolute;
+  background: #fc7049;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.select.select:hover::after {
+  background: #fff;
+  color: #fc7049;
+}
